@@ -1,23 +1,13 @@
 import { ImageBackground } from "@/components/image-background";
 import Navbar from "@/components/navbar/navbar";
-import Image from "next/image";
 
-type Props = {};
-
-const IndexRoute = (props: Props) => {
+const IndexRoute = () => {
   return (
-    <div>
-      {/* <div className="w-screen relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-black/50" />
-        <Image
-          className="w-full"
-          src="/assets/landing-hero.png"
-          alt="landing-hero"
-          width={1000}
-          height={1000}
-        />
-      </div> */}
+    <main>
       <ImageBackground
+        preload
+        loading="eager"
+        fetchPriority="high"
         overlayOpacity={0.6}
         src="/assets/landing-hero.png"
         alt="landing-hero"
@@ -50,7 +40,7 @@ const IndexRoute = (props: Props) => {
           </div>
         </div>
       </ImageBackground>
-    </div>
+    </main>
   );
 };
 
