@@ -1,7 +1,26 @@
+import withSVGR from "next-svgr";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: false,
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*",
+      },
+    ],
+  },
 };
 
-export default nextConfig;
+const svgrConfig = withSVGR as (config: NextConfig) => NextConfig;
+
+export default svgrConfig(nextConfig);
