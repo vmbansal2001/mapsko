@@ -1,45 +1,32 @@
-import { ImageBackground } from "@/components/image-background";
-import Navbar from "@/components/navbar/navbar";
+import FirstSection from "./first-section/first-section";
+import HeroSection from "./hero-section";
+import SecondSection from "./second-section/second-section";
+import ThirdSection from "./third-section/third-section";
+import BuildingImage from "./9239a29228e25fea07ea4879103ec248811b07df.png";
+import Image from "next/image";
+import FourthSection from "./fourth-section/fourth-section";
+import FifthSection from "./fifth-section/fifth-section";
+import SixthSection from "./sixth-section/sixth-section";
+import Footer from "@/components/footer/footer";
 
 const IndexRoute = () => {
   return (
     <main>
-      <ImageBackground
-        preload
-        loading="eager"
-        fetchPriority="high"
-        overlayOpacity={0.6}
-        src="/assets/landing-hero.png"
-        alt="landing-hero"
+      <HeroSection />
+      <FirstSection />
+      <SecondSection />
+      <ThirdSection />
+      <Image
+        src={BuildingImage}
+        alt="fourth-section-image"
         width={1000}
         height={1000}
-      >
-        <div className="w-screen h-screen flex items-center justify-between flex-col text-white">
-          <Navbar />
-          <div className="text-center">
-            <h1 className="text-5xl">BUILDING DREAMS, CREATING LEGACIES</h1>
-            <p className="text-2xl">
-              Premium Real Estate Excellence Since 1960s
-            </p>
-
-            <button className="border border-white p-4 mt-10">
-              Explore Our Projects
-            </button>
-          </div>
-          <div className="divide-x divide-white *:px-4 text-2xl flex mb-20">
-            <p>
-              <span className="font-bold">20+</span> Successful Projects
-            </p>
-            <p>ISO 9001:2000 Certified</p>
-            <p>
-              <span className="font-bold">3+ Decades</span> Legacy
-            </p>
-            <p>
-              <span className="font-bold">10,000+ </span>Happy Families
-            </p>
-          </div>
-        </div>
-      </ImageBackground>
+        className="w-full h-[517px] object-cover"
+      />
+      <FourthSection />
+      <FifthSection />
+      <SixthSection />
+      <Footer />
     </main>
   );
 };
