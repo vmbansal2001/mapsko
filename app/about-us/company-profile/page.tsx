@@ -12,7 +12,7 @@ const Page = () => {
         <Navigator
           routes={[
             { label: "Home", href: "/" },
-            { label: "About Us", href: "/about-us" },
+            { label: "About Us", href: "" },
             { label: "Company Profile", href: "/about-us/company-profile" },
           ]}
         />
