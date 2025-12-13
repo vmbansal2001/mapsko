@@ -1,27 +1,55 @@
 import Logo from "@/assets/icons/mapsko-logo.svg";
 import Image from "next/image";
-import ImageOne from "./images/image (-1.png";
-import ImageTwo from "./images/image (-2.png";
-import ImageThree from "./images/image (-3.png";
-import ImageFour from "./images/image (-4.png";
-import ImageFive from "./images/image (-5.png";
-import ImageSix from "./images/image (-6.png";
-import ImageSeven from "./images/image (-7.png";
-import ImageEight from "./images/image (-8.png";
-import ImageNine from "./images/image (7).png";
+import Link from "next/link";
 
 type Props = {};
 
 const data = [
-  { image: ImageOne, alt: "Image One", href: "/" },
-  { image: ImageTwo, alt: "Image Two", href: "/" },
-  { image: ImageThree, alt: "Image Three", href: "/" },
-  { image: ImageFour, alt: "Image Four", href: "/" },
-  { image: ImageFive, alt: "Image Five", href: "/" },
-  { image: ImageSix, alt: "Image Six", href: "/" },
-  { image: ImageSeven, alt: "Image Seven", href: "/" },
-  { image: ImageEight, alt: "Image Eight", href: "/" },
-  { image: ImageNine, alt: "Image Nine", href: "/" },
+  {
+    image: "/assets/residential-projects/casa-bella.png",
+    alt: "Casa Bella",
+    href: "/",
+  },
+  {
+    image: "/assets/residential-projects/city-homes.png",
+    alt: "City Homes",
+    href: "/",
+  },
+  {
+    image: "/assets/residential-projects/garden-estate.png",
+    alt: "Garden Estate",
+    href: "/",
+  },
+  {
+    image: "/assets/residential-projects/krishna-apra-gardens.png",
+    alt: "Krishna Apra Gardens",
+    href: "/",
+  },
+  {
+    image: "/assets/residential-projects/krishna-apra.png",
+    alt: "Krishna Apra",
+    href: "/",
+  },
+  {
+    image: "/assets/residential-projects/mount-ville.png",
+    alt: "Mount Ville",
+    href: "/",
+  },
+  {
+    image: "/assets/residential-projects/paradise.png",
+    alt: "Paradise",
+    href: "/",
+  },
+  {
+    image: "/assets/residential-projects/royale-ville.png",
+    alt: "Royale Ville",
+    href: "/",
+  },
+  {
+    image: "/assets/residential-projects/sapphire.png",
+    alt: "Sapphire",
+    href: "/",
+  },
 ];
 
 const ThirdSection = (props: Props) => {
@@ -39,14 +67,16 @@ const ThirdSection = (props: Props) => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
         {data.map((item, index) => (
-          <Image
-            key={index}
-            src={item.image}
-            alt={item.alt}
-            width={500}
-            height={500}
-            className="w-full"
-          />
+          <Link href={item.href} key={index} className="cursor-pointer flex">
+            <Image
+              key={index}
+              src={item.image}
+              alt={item.alt}
+              width={500}
+              height={500}
+              className="w-full"
+            />
+          </Link>
         ))}
       </div>
     </div>
