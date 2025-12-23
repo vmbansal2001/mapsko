@@ -26,7 +26,7 @@ const LocationContent = () => {
           <iframe
             title="Mapsko Group Location"
             src={
-              property.googleMapsLink ||
+              `${property.googleMapsLink}?output=embed` ||
               "https://www.google.com/maps?q=Mapsko%20Group%2C%20Golf%20Course%20Rd%2C%20Gurugram&output=embed"
             }
             className="absolute left-0 top-0 h-full w-full"

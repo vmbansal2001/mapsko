@@ -19,26 +19,32 @@ const PropertyNavbar = ({ property }: PropertyNavbarProps) => {
     {
       label: "About Us",
       href: `/project/${property.slug}/about`,
+      enabled: true,
     },
     {
       label: "Location",
       href: `/project/${property.slug}/location`,
+      enabled: true,
     },
     {
       label: "Floor Plans",
       href: `/project/${property.slug}/floor-plans`,
+      enabled: true,
     },
     {
       label: "Image Gallery",
       href: `/project/${property.slug}/image-gallery`,
+      enabled: property.imageGallery && property.imageGallery.length > 0,
     },
     {
       label: "Video Gallery",
       href: `/project/${property.slug}/video-gallery`,
+      enabled: property.videos && property.videos.length > 0,
     },
     {
       label: "Contact Us",
       href: `/contact`,
+      enabled: true,
     },
   ];
 
@@ -78,13 +84,13 @@ const PropertyNavbar = ({ property }: PropertyNavbarProps) => {
           <SanityImage
             image={property.propertyLogo}
             alt={property.name}
-            className="md:h-[100px] md:w-[230px] h-[50px] w-[120px]"
+            className="md:w-[230px] w-[120px] object-contain"
             width={230}
-            height={100}
           />
         </Link>
         <nav className="hidden md:flex items-center gap-2 md:gap-3 lg:gap-5 xl:gap-8 flex-wrap lg:flex-nowrap">
           {links.map((link, index) => {
+            if (!link.enabled) return null;
             return (
               <Link
                 key={`${link.label}-${index}`}
@@ -158,6 +164,7 @@ const PropertyNavbar = ({ property }: PropertyNavbarProps) => {
 
             <nav className="flex flex-col gap-3">
               {links.map((link, index) => {
+                if (!link.enabled) return null;
                 return (
                   <Link
                     key={`${link.label}-${index}`}

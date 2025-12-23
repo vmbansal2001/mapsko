@@ -24,18 +24,20 @@ const FloorPlansContent = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {property.floorPlans?.map((floorPlan) => (
-          <div key={floorPlan._key}>
+          <div key={floorPlan._key} className="flex flex-col">
             {floorPlan.image && (
               <SanityImage
                 image={floorPlan.image}
                 alt={floorPlan.label || ""}
                 width={1000}
-                className="w-full h-full object-cover"
+                className="w-full object-cover"
               />
             )}
-            <p className="p-4 bg-lime-500 text-center text-white text-2xl font-extrabold">
-              {floorPlan.label}
-            </p>
+            {floorPlan.label && (
+              <p className="p-4 bg-lime-500 text-center text-white text-2xl font-extrabold">
+                {floorPlan.label}
+              </p>
+            )}
           </div>
         ))}
       </div>

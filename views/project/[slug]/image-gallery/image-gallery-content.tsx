@@ -34,9 +34,11 @@ const ImageGalleryContent = () => {
                 className="object-cover md:h-[350px] xl:h-[500px]"
               />
             )}
-            <p className="p-4 bg-lime-500 text-center text-white text-2xl font-extrabold">
-              {imageItem.label}
-            </p>
+            {imageItem.label && (
+              <p className="p-4 bg-lime-500 text-center text-white text-2xl font-extrabold">
+                {imageItem.label}
+              </p>
+            )}
           </div>
         ))}
       </div>

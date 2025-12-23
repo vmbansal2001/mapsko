@@ -23,7 +23,7 @@ const VisualShowcase = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-          {property.imageGallery.map((image) => (
+          {property.imageGallery?.slice(0, 6).map((image) => (
             <div key={image._key} className="relative">
               {image.image && (
                 <SanityImage image={image.image} width={1000} height={1000} />
