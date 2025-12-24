@@ -15,7 +15,7 @@ export function ViewWebsiteButton() {
     );
   }
 
-  const websiteUrl = `${typeof window !== "undefined" ? window.location.origin : ""}/projects/${slugValue}`;
+  const websiteUrl = `${typeof window !== "undefined" ? window.location.origin : ""}/project/${slugValue}`;
 
   return (
     <Stack space={3}>
