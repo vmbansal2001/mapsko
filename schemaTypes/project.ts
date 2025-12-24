@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { ViewWebsiteButton } from "./components/ViewWebsiteButton";
 
 export default defineType({
   name: "project",
@@ -45,6 +46,16 @@ export default defineType({
         layout: "radio",
       },
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "viewWebsite",
+      title: "View Website",
+      type: "string",
+      group: "main",
+      readOnly: true,
+      components: {
+        input: ViewWebsiteButton,
+      },
     }),
     defineField({
       name: "primaryCoverPhoto",
