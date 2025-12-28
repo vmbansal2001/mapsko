@@ -12,6 +12,7 @@ export default defineType({
     { name: "floorPlans", title: "Floor Plans" },
     { name: "imageGallery", title: "Image Gallery" },
     { name: "videos", title: "Videos" },
+    { name: "sliderCard", title: "Slider Card" },
   ],
   fields: [
     // Main Page
@@ -287,6 +288,33 @@ export default defineType({
           },
         }),
       ],
+    }),
+
+    // Slider Card
+    defineField({
+      name: "sliderPhoto",
+      title: "Slider Photo",
+      type: "image",
+      group: "sliderCard",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "shortAddress",
+      title: "Short Address",
+      type: "string",
+      group: "sliderCard",
+    }),
+    defineField({
+      name: "statusText",
+      title: "Status Text",
+      type: "string",
+      group: "sliderCard",
+    }),
+    defineField({
+      name: "sliderDescription",
+      title: "Slider Description",
+      type: "string",
+      group: "sliderCard",
     }),
   ],
   preview: {

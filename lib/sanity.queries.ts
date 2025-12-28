@@ -46,7 +46,11 @@ export const projectBySlugQuery = groq`
       _key,
       videoUrl,
       title
-    }
+    },
+    sliderPhoto,
+    shortAddress,
+    statusText,
+    sliderDescription
   }
 `;
 
@@ -60,6 +64,18 @@ export const galleryImagesQuery = groq`
       image,
       label
     }
+  }
+`;
+
+export const projectsWithSliderQuery = groq`
+  *[_type == "project" && defined(sliderPhoto)]{
+    _id,
+    name,
+    "slug": slug.current,
+    sliderPhoto,
+    shortAddress,
+    statusText,
+    sliderDescription
   }
 `;
 

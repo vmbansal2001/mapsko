@@ -52,6 +52,20 @@ export interface ProjectDocument {
   aboutLocation?: string;
   googleMapsLink?: string;
   videos?: VideoItem[];
+  sliderPhoto?: Image;
+  shortAddress?: string;
+  statusText?: string;
+  sliderDescription?: string;
+}
+
+export interface ProjectWithSlider {
+  _id: string;
+  name: string;
+  slug: string;
+  sliderPhoto: Image;
+  shortAddress?: string;
+  statusText?: string;
+  sliderDescription?: string;
 }
 
 export interface BlogDocument {
