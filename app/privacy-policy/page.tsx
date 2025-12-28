@@ -1,6 +1,20 @@
+import { absoluteUrl, toOgImage } from "@/lib/seo";
 import Footer from "@/components/footer/footer";
 import Navigator from "@/components/navigator/navigator";
 import HeroSection from "@/views/privacy-policy/hero-section";
+
+export const metadata = {
+  title: "Privacy Policy & Disclaimer | Mapsko",
+  description:
+    "Read Mapsko’s privacy policy and disclaimer covering how we collect, use, and protect your personal information.",
+  alternates: {
+    canonical: absoluteUrl("/privacy-policy"),
+  },
+  openGraph: {
+    url: absoluteUrl("/privacy-policy"),
+    images: toOgImage("/assets/og-default.webp"),
+  },
+};
 
 const Page = () => {
   return (

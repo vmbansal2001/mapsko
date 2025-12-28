@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { baseMetadata, absoluteUrl } from "@/lib/seo";
+import { buildOrganizationJsonLd, buildWebsiteJsonLd } from "@/lib/jsonld";
 
 const avenir = localFont({
   src: [
@@ -34,19 +35,43 @@ const avenir = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Mapsko",
-  description: "Inspiring ",
-};
+export const metadata = baseMetadata;
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteUrl = absoluteUrl("/");
+  const organizationJsonLd = buildOrganizationJsonLd({
+    name: "Mapsko",
+    url: siteUrl,
+    logo: absoluteUrl("/favicon.ico"),
+    sameAs: [
+      "https://www.instagram.com/mapskogroup/",
+      "https://www.facebook.com/mapskogroup/",
+      "https://www.youtube.com/@mapskogroup5591",
+      "https://www.linkedin.com/company/mapskogroup/",
+    ],
+  });
+
+  const websiteJsonLd = buildWebsiteJsonLd({
+    url: siteUrl,
+    name: "Mapsko",
+  });
+
   return (
     <html lang="en">
-      <body className={`${avenir.variable} antialiased`}>{children}</body>
+      <body className={`${avenir.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organizationJsonLd, websiteJsonLd]),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

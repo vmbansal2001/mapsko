@@ -1,9 +1,23 @@
+import { absoluteUrl, toOgImage } from "@/lib/seo";
 import Footer from "@/components/footer/footer";
 import Navigator from "@/components/navigator/navigator";
 import HeroSection from "@/views/gallery/hero-section";
 import Logo from "@/assets/icons/mapsko-logo.svg";
 import GalleryContent from "@/views/gallery/gallery-content";
 import { fetchProjectsGallery } from "@/views/gallery/projects-gallery-data";
+
+export const metadata = {
+  title: "Project Gallery | Mapsko",
+  description:
+    "Browse the Mapsko visual showcase of architecture, amenities, and lifestyle across our residential and commercial projects in Gurugram.",
+  alternates: {
+    canonical: absoluteUrl("/gallery"),
+  },
+  openGraph: {
+    url: absoluteUrl("/gallery"),
+    images: toOgImage("/assets/og-default.webp"),
+  },
+};
 
 const Page = async () => {
   const projectsGallery = await fetchProjectsGallery();

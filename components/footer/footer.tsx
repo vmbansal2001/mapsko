@@ -1,4 +1,4 @@
-import Logo from "@/assets/icons/mapsko-white-logo.svg";
+import Logo from "@/assets/icons/mapsko-white-logo-with-name.svg";
 import InstagramIcon from "./instagram.svg";
 import FacebookIcon from "./facebook.svg";
 import YoutubeIcon from "./youtube.svg";
@@ -56,10 +56,10 @@ const Footer = async () => {
         <div className="common-frame-box py-12 md:py-16 lg:py-20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12 items-start">
             <div className="flex flex-col gap-4 text-sm md:text-base">
-              <Logo aria-label="Mapsko logo" className="w-10" />
+              <Logo aria-label="Mapsko logo" className="md:w-[260px] w-32" />
               <p className="max-w-[340px] leading-relaxed">
-                Crafting Luxury & Premium Homes with Mapsko — Shaping Homes,
-                Shaping Lives.
+                Experience unmatched comfort and luxury with GHD Infra -
+                redefining living for you.
               </p>
               <div className="flex items-center gap-3 pt-1">
                 {socialLinks.map(({ label, href, icon: Icon }) => (

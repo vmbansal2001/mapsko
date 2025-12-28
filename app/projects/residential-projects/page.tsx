@@ -1,3 +1,4 @@
+import { absoluteUrl, toOgImage } from "@/lib/seo";
 import Footer from "@/components/footer/footer";
 import Navigator from "@/components/navigator/navigator";
 import FirstSection from "@/views/projects/residential-projects/first-section/first-section";
@@ -6,6 +7,19 @@ import SecondSection from "@/views/projects/residential-projects/second-section/
 import ThirdSection from "@/views/projects/residential-projects/third-section.tsx/third-section";
 
 type Props = {};
+
+export const metadata = {
+  title: "Residential Projects in Gurugram | Mapsko",
+  description:
+    "Explore Mapsko’s luxury residential projects in Gurugram, featuring premium amenities, thoughtfully designed spaces, and prime connectivity.",
+  alternates: {
+    canonical: absoluteUrl("/projects/residential-projects"),
+  },
+  openGraph: {
+    url: absoluteUrl("/projects/residential-projects"),
+    images: toOgImage("/assets/og-default.webp"),
+  },
+};
 
 const Page = (props: Props) => {
   return (

@@ -1,8 +1,22 @@
+import { absoluteUrl, toOgImage } from "@/lib/seo";
 import Footer from "@/components/footer/footer";
 import Navigator from "@/components/navigator/navigator";
 import FirstSection from "@/views/about-us/company-profile/first-section/first-section";
 import HeroSection from "@/views/about-us/company-profile/hero-section/hero-section";
 import SecondSection from "@/views/about-us/company-profile/second-section/second-section";
+
+export const metadata = {
+  title: "Company Profile | Mapsko Group",
+  description:
+    "Learn about Mapsko Group’s legacy of crafting premium residential and commercial developments, our leadership, and commitment to quality in Gurugram.",
+  alternates: {
+    canonical: absoluteUrl("/about-us/company-profile"),
+  },
+  openGraph: {
+    url: absoluteUrl("/about-us/company-profile"),
+    images: toOgImage("/assets/og-default.webp"),
+  },
+};
 
 const Page = () => {
   return (

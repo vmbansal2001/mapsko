@@ -1,7 +1,21 @@
+import { absoluteUrl, toOgImage } from "@/lib/seo";
 import HeroSection from "@/views/projects/commercial-projects/hero-section";
 import Navigator from "@/components/navigator/navigator";
 import FirstSection from "@/views/projects/commercial-projects/first-section/first-section";
 import Footer from "@/components/footer/footer";
+
+export const metadata = {
+  title: "Commercial Projects in Gurugram | Mapsko",
+  description:
+    "Discover Mapsko’s commercial developments offering modern infrastructure, strategic locations, and premium business-ready spaces in Gurugram.",
+  alternates: {
+    canonical: absoluteUrl("/projects/commercial-projects"),
+  },
+  openGraph: {
+    url: absoluteUrl("/projects/commercial-projects"),
+    images: toOgImage("/assets/og-default.webp"),
+  },
+};
 
 const Page = () => {
   return (

@@ -1,8 +1,22 @@
+import { absoluteUrl, toOgImage } from "@/lib/seo";
 import Footer from "@/components/footer/footer";
 import Navigator from "@/components/navigator/navigator";
 import FirstSection from "@/views/ready-to-move-in/first-section";
 import HeroSection from "@/views/ready-to-move-in/hero-section";
 import ReadyToMoveInProperties from "@/views/ready-to-move-in/ready-to-move-in-properties";
+
+export const metadata = {
+  title: "Ready-to-Move-In Properties | Mapsko",
+  description:
+    "Explore ready-to-move-in homes by Mapsko featuring premium finishes, prime locations, and quick possession in Gurugram.",
+  alternates: {
+    canonical: absoluteUrl("/ready-to-move-in"),
+  },
+  openGraph: {
+    url: absoluteUrl("/ready-to-move-in"),
+    images: toOgImage("/assets/og-default.webp"),
+  },
+};
 
 const Page = () => {
   return (

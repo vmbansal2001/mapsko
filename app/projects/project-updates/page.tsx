@@ -1,8 +1,22 @@
+import { absoluteUrl, toOgImage } from "@/lib/seo";
 import Footer from "@/components/footer/footer";
 import Navigator from "@/components/navigator/navigator";
 import BuiltAndHandover from "@/views/projects/project-updates/built-and-handover";
 import HeroSection from "@/views/projects/project-updates/hero-section";
 import OngoingProjects from "@/views/projects/project-updates/ongoing-projects";
+
+export const metadata = {
+  title: "Project Updates | Mapsko",
+  description:
+    "Stay informed on Mapsko’s project milestones, construction progress, and handover updates across residential and commercial developments.",
+  alternates: {
+    canonical: absoluteUrl("/projects/project-updates"),
+  },
+  openGraph: {
+    url: absoluteUrl("/projects/project-updates"),
+    images: toOgImage("/assets/og-default.webp"),
+  },
+};
 
 const Page = () => {
   return (

@@ -1,8 +1,22 @@
+import { absoluteUrl, toOgImage } from "@/lib/seo";
 import Navigator from "@/components/navigator/navigator";
 import HeroSection from "@/views/career/hero-section";
 import Logo from "@/assets/icons/mapsko-logo.svg";
 import CareerForm from "@/views/career/career-form/career-form";
 import Footer from "@/components/footer/footer";
+
+export const metadata = {
+  title: "Careers at Mapsko",
+  description:
+    "Join Mapsko and build the future of premium real estate in Gurugram. Explore current openings and submit your application.",
+  alternates: {
+    canonical: absoluteUrl("/career"),
+  },
+  openGraph: {
+    url: absoluteUrl("/career"),
+    images: toOgImage("/assets/og-default.webp"),
+  },
+};
 
 const Page = () => {
   return (
