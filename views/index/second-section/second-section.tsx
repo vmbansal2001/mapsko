@@ -13,7 +13,7 @@ const PROJECTS = [
     location: "Sector 26A, Sonipat",
     subPoints: [
       "Status: Super Structure Completed",
-      "Experience nature-centric living in the heart of Sonipat. Premium apartments with world-class amenities and seamless connectivity",
+      "Experience nature-centric living in the heart of Sonipat. Premium apartments with world-class amenities.",
     ],
   },
   {
@@ -21,10 +21,10 @@ const PROJECTS = [
     imageSrc: SecondImage,
     linkHref: "/",
     title: "Mapsko The Icon 79",
-    location: "Sector-79, Gurgaon",
+    location: "Sector-79, Gurugram",
     subPoints: [
       "Status: Super Structure Completed",
-      "Luxury redefined in Gurgaon's prime location. Modern architecture meets sophisticated living.",
+      "Luxury redefined in Gurugram's prime location. Modern architecture meets sophisticated living.",
     ],
   },
   {
@@ -32,10 +32,10 @@ const PROJECTS = [
     imageSrc: ThirdImage,
     linkHref: "/",
     title: "Mapsko ASPR Hills",
-    location: "Sector-78, Gurgaon",
+    location: "Sector-78, Gurugram",
     subPoints: [
       "Status: OC Completed",
-      "Elevated living experience with panoramic views and premium amenities in New Gurgaon.",
+      "Elevated living experience with panoramic views and premium amenities in New Gurugram.",
     ],
   },
 ] as const;
@@ -53,7 +53,7 @@ const SecondSection = () => {
         </p>
       </div>
 
-      <div className="mapsko-marquee mapsko-marquee--ltr text-white text-center">
+      <div className="mapsko-marquee mapsko-marquee--rtl text-white text-center">
         <div className="mapsko-marquee__track">
           {[0, 1].map((dupIndex) => (
             <div key={dupIndex} className="flex flex-nowrap items-stretch">

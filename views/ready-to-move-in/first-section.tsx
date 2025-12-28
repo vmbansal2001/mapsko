@@ -11,7 +11,7 @@ const FirstSection = () => {
 
         <div className="space-y-8">
           <p className="text-neutral-500 text-lg font-light">
-            Looking for a ready to move property in Gurgaon, Delhi NCR? As per
+            Looking for a ready to move property in Gurugram, Delhi NCR? As per
             the picture and scenario of the current market, home-seekers often
             get confused between buying ready to move apartments or
             under-construction apartments. Without any second thought, we will
@@ -55,7 +55,7 @@ const FirstSection = () => {
           <div className="text-neutral-500 text-lg font-light ">
             Thus, going for a ready to move in property is the best option.
             Contact Mapsko if you are interested in buying a ready to move flats
-            in Gurgaon or NCR. We have many projects available and you can
+            in Gurugram or NCR. We have many projects available and you can
             choose the best one for you.
           </div>
         </div>

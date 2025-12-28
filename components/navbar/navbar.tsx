@@ -60,7 +60,7 @@ const Navbar = () => {
       href: "/blog",
     },
     {
-      label: "Career",
+      label: "Careers",
       href: "/career",
     },
   ];

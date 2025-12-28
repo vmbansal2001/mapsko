@@ -16,7 +16,7 @@ const Page = () => {
               href: "/",
             },
             {
-              label: "Career",
+              label: "Careers",
               href: "/career",
             },
           ]}

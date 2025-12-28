@@ -29,13 +29,13 @@ const Page = (props: Props) => {
         luxurious and best-in-class commercial and residential properties to the
         customers. We feel proud to announce that we have developed many
         residential spaces over the past 20 years. When it comes to handling
-        residential projects in Gurgaon, our highly experienced engineers have
+        residential projects in Gurugram, our highly experienced engineers have
         crafted some of the premium residential complexes according to the
         different requirements of the clients. We merge the finest of
         aesthetics, architecture, design, construction, and technology together
         to come up with something unique and modern every single time. Our
         recent projects involve the MAPSKO MOUNT VILLE, Premium Hill Homes,
-        Sec-79, Gurgaon, MAPSKO Royale Ville at Sector 82, Gurgaon.
+        Sec-79, Gurugram, MAPSKO Royale Ville at Sector 82, Gurugram.
       </div>
 
       <FirstSection />

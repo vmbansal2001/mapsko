@@ -34,10 +34,10 @@ const SecondSection = () => {
           imageSrc={SecondImage}
           linkHref="/"
           title="Mapsko The Icon 79"
-          location="Sector-79, Gurgaon"
+          location="Sector-79, Gurugram"
           subPoints={[
             "Status: Super Structure Completed",
-            "Luxury redefined in Gurgaon's prime location. Modern architecture meets sophisticated living.",
+            "Luxury redefined in Gurugram's prime location. Modern architecture meets sophisticated living.",
           ]}
           gradientColor="#8AC028"
         />
@@ -46,10 +46,10 @@ const SecondSection = () => {
           imageSrc={ThirdImage}
           linkHref="/"
           title="Mapsko ASPR Hills"
-          location="Sector-78, Gurgaon"
+          location="Sector-78, Gurugram"
           subPoints={[
             "Status: OC Completed",
-            "Elevated living experience with panoramic views and premium amenities in New Gurgaon.",
+            "Elevated living experience with panoramic views and premium amenities in New Gurugram.",
           ]}
           gradientColor="#0B6BB8"
         />

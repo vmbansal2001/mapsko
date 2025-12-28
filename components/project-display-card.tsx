@@ -31,7 +31,7 @@ const ProjectDisplayCard = ({
       <div
         className="transition-all duration-300 h-[400px] sm:h-[500px] md:h-[600px] lg:h-[600px] w-full flex flex-col items-center justify-end p-4 sm:p-6 md:p-8 lg:p-10 opacity-90"
         style={{
-          background: `linear-gradient(to top left, ${gradientColor} 0%, ${gradientColor} 80%, transparent 100%)`,
+          background: `linear-gradient(to top, ${gradientColor} 0%, ${gradientColor} 65%, transparent 100%)`,
         }}
       >
         <span className="text-2xl sm:text-3xl md:text-4xl font-normal uppercase pb-4 sm:pb-6 md:pb-8 lg:pb-10">
