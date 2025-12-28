@@ -13,6 +13,7 @@ export default defineType({
     { name: "imageGallery", title: "Image Gallery" },
     { name: "videos", title: "Videos" },
     { name: "sliderCard", title: "Slider Card" },
+    { name: "other", title: "Other" },
   ],
   fields: [
     // Main Page
@@ -47,6 +48,19 @@ export default defineType({
         layout: "radio",
       },
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "projectStatus",
+      title: "Project Status",
+      type: "string",
+      group: "main",
+      options: {
+        list: [
+          { title: "Ongoing", value: "ongoing" },
+          { title: "Completed", value: "completed" },
+        ],
+        layout: "radio",
+      },
     }),
     defineField({
       name: "viewWebsite",
@@ -315,6 +329,27 @@ export default defineType({
       title: "Slider Description",
       type: "string",
       group: "sliderCard",
+    }),
+
+    // Other
+    defineField({
+      name: "registrationCode",
+      title: "Registration Code",
+      type: "string",
+      group: "other",
+    }),
+    defineField({
+      name: "propertyImageWithLogo",
+      title: "Property Image with Logo",
+      type: "image",
+      group: "other",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "readyToMoveInContent",
+      title: "Ready to Move In Content",
+      type: "text",
+      group: "other",
     }),
   ],
   preview: {

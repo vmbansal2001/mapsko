@@ -26,16 +26,15 @@ const Page = () => {
         we have created some of the finest epitomes of excellence. Believing in
         the idea of merging our strength with our experience, we have
         transformed the work culture with the office spaces and commercial
-        properties in Gurugram. The pioneering MAPSKO commercial projects are
-        all set to mark new records and craft new developments in the history of
+        properties in Gurgaon. The pioneering MAPSKO commercial projects are all
+        set to mark new records and craft new developments in the history of
         commercial construction in the upcoming years. Our current commercial
-        projects include Maspko shopping arcade, Mapsko Royale Plaza, Mapsko
-        business arcade, Galleria, Krishna Apra D mall, etc. The projects are
-        designed by the group of professional building consultants that will
-        surely give you a sense of luxury. The spacious ambiance and highly
-        decorated interiors are the USP's of these commercial projects in
-        Gurugram that will change your entire lifestyle into an extraordinary
-        one.
+        projects include Mapsko shopping arcade, Mapsko Royale Plaza, Mapsko
+        business arcade, Galleria, etc. The projects are designed by a group of
+        professional building consultants who will surely give you a sense of
+        luxury. The spacious ambiance and highly decorated interiors are the
+        USP's of these commercial projects in Gurugram, Sonipat, and Gurgaon
+        that will change your entire lifestyle into an extraordinary one.
       </div>
 
       <FirstSection />

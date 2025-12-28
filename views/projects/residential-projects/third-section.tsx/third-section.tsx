@@ -1,58 +1,25 @@
 import Logo from "@/assets/icons/mapsko-logo.svg";
-import Image from "next/image";
 import Link from "next/link";
+import { client } from "@/lib/sanity.client";
+import { projectsWithPropertyImageQuery } from "@/lib/sanity.queries";
+import type { ProjectWithPropertyImage } from "@/lib/sanity.types";
+import SanityImage from "@/components/sanity-image";
 
 type Props = {};
 
-const data = [
-  {
-    image: "/assets/residential-projects/casa-bella.png",
-    alt: "Casa Bella",
-    href: "/",
-  },
-  {
-    image: "/assets/residential-projects/city-homes.png",
-    alt: "City Homes",
-    href: "/",
-  },
-  {
-    image: "/assets/residential-projects/garden-estate.png",
-    alt: "Garden Estate",
-    href: "/",
-  },
-  {
-    image: "/assets/residential-projects/krishna-apra-gardens.png",
-    alt: "Krishna Apra Gardens",
-    href: "/",
-  },
-  {
-    image: "/assets/residential-projects/krishna-apra.png",
-    alt: "Krishna Apra",
-    href: "/",
-  },
-  {
-    image: "/assets/residential-projects/mount-ville.png",
-    alt: "Mount Ville",
-    href: "/",
-  },
-  {
-    image: "/assets/residential-projects/paradise.png",
-    alt: "Paradise",
-    href: "/",
-  },
-  {
-    image: "/assets/residential-projects/royale-ville.png",
-    alt: "Royale Ville",
-    href: "/",
-  },
-  {
-    image: "/assets/residential-projects/sapphire.png",
-    alt: "Sapphire",
-    href: "/",
-  },
-];
+const ThirdSection = async (props: Props) => {
+  const projects = await client.fetch<ProjectWithPropertyImage[]>(
+    projectsWithPropertyImageQuery
+  );
 
-const ThirdSection = (props: Props) => {
+  const residentialProjects = projects.filter(
+    (project) => project.projectType === "residential"
+  );
+
+  if (residentialProjects.length === 0) {
+    return null;
+  }
+
   return (
     <div className="py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-5 md:space-y-6 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
@@ -66,18 +33,23 @@ const ThirdSection = (props: Props) => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
-        {data.map((item, index) => (
-          <Link href={item.href} key={index} className="cursor-pointer flex">
-            <Image
-              key={index}
-              src={item.image}
-              alt={item.alt}
-              width={500}
-              height={500}
-              className="w-full"
-            />
-          </Link>
-        ))}
+        {residentialProjects.map((project) => {
+          return (
+            <Link
+              href={`/project/${project.slug}`}
+              key={project._id}
+              className="cursor-pointer flex"
+            >
+              <SanityImage
+                image={project.propertyImageWithLogo}
+                alt={project.name}
+                width={500}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

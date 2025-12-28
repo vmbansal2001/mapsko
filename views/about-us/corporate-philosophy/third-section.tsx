@@ -29,7 +29,7 @@ const ThirdSection = () => {
             <br />
             In adherence to strict quality practices and international
             standards, Mapsko lives up to its commitment to what the customer
-            demands. Being an ISO 9001:2000 certified, company assures the fact
+            demands. Being an ISO 9001:2000 certified company assures the fact
             that the company is consistent and reliable with some of the best
             practices the industry has to offer.
           </span>

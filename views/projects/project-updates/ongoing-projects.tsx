@@ -1,39 +1,26 @@
 import Logo from "@/assets/icons/mapsko-logo.svg";
 import ProjectCard from "./project-card";
+import { client } from "@/lib/sanity.client";
+import { projectsByStatusQuery } from "@/lib/sanity.queries";
+import type { ProjectUpdateItem } from "@/lib/sanity.types";
 
-const OngoingProjects = () => {
-  const ongoingProjects = [
-    {
-      title: "HRERA-PKL-SNP-522-2023",
-      subtext: "Construction is in full swing",
-      logoUrl: "/assets/residential-projects/logos/gardenia.png",
-      href: "/project/mapsko-gardenia",
-    },
-    {
-      title: "HRERA-PKL-SNP-397-2023",
-      subtext: "Construction is in full swing",
-      logoUrl: "/assets/residential-projects/logos/aspr-greenz.png",
-      href: "/project/aspr-greenz",
-    },
-    {
-      title: "H-RERA Registration NO- 22 OF 2023",
-      subtext: "Construction is in full swing",
-      logoUrl: "/assets/residential-projects/logos/aspr-hills.png",
-      href: "/project/aspr-hills",
-    },
-    {
-      title: "HRERA NO - HRERA 33 OF 2023",
-      subtext: "Construction is in full swing",
-      logoUrl: "/assets/residential-projects/logos/icon-79.png",
-      href: "/project/icon-79",
-    },
-    {
-      title: "HRERA-PKL-SNP-343-2022",
-      subtext: "",
-      logoUrl: "/assets/residential-projects/logos/garden-estate-2.png",
-      href: "/project/garden-estate-2",
-    },
-  ];
+const OngoingProjects = async () => {
+  const projects = await client.fetch<ProjectUpdateItem[]>(
+    projectsByStatusQuery,
+    { status: "ongoing" }
+  );
+
+  const ongoingProjects = projects.map((project) => ({
+    id: project._id,
+    title: project.registrationCode || "",
+    subtext: "Construction is in full swing",
+    logoImage: project.propertyLogo,
+    href: `/project/${project.slug}`,
+  }));
+
+  if (ongoingProjects.length === 0) {
+    return null;
+  }
 
   return (
     <div className="common-frame-box py-8 sm:py-12 md:py-16 lg:py-20 xl:py-28">
@@ -48,12 +35,12 @@ const OngoingProjects = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {ongoingProjects.map((project, index) => (
+        {ongoingProjects.map((project) => (
           <ProjectCard
-            key={index}
+            key={project.id}
             title={project.title}
             subtext={project.subtext}
-            logoUrl={project.logoUrl}
+            logoImage={project.logoImage}
             href={project.href}
           />
         ))}

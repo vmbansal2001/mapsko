@@ -56,6 +56,9 @@ export interface ProjectDocument {
   shortAddress?: string;
   statusText?: string;
   sliderDescription?: string;
+  registrationCode?: string;
+  propertyImageWithLogo?: Image;
+  readyToMoveInContent?: string;
 }
 
 export interface ProjectWithSlider {
@@ -66,6 +69,41 @@ export interface ProjectWithSlider {
   shortAddress?: string;
   statusText?: string;
   sliderDescription?: string;
+  projectType: "residential" | "commercial";
+}
+
+export interface ProjectFooterItem {
+  _id: string;
+  name: string;
+  slug: string;
+  projectType: "residential" | "commercial";
+}
+
+export interface ProjectWithPropertyImage {
+  _id: string;
+  name: string;
+  slug: string;
+  propertyImageWithLogo: Image;
+  projectType: "residential" | "commercial";
+}
+
+export interface ProjectUpdateItem {
+  _id: string;
+  slug: string;
+  registrationCode?: string;
+  propertyLogo: Image;
+}
+
+export interface ReadyToMoveInProject {
+  _id: string;
+  name: string;
+  slug: string;
+  propertyImageWithLogo?: Image;
+  primaryPropertyPhoto?: Image;
+  propertyLogo?: Image;
+  shortAddress?: string;
+  readyToMoveInContent?: string;
+  about?: string;
 }
 
 export interface BlogDocument {

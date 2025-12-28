@@ -1,28 +1,23 @@
 import Logo from "@/assets/icons/mapsko-logo.svg";
-import Image from "next/image";
-import ImageOne from "./images/image (-9.png";
-import ImageTwo from "./images/image (-10.png";
-import ImageThree from "./images/image (-11.png";
-import ImageFour from "./images/image (-12.png";
-import ImageFive from "./images/image (-13.png";
-import ImageSix from "./images/image (-14.png";
-import ImageSeven from "./images/image (-15.png";
-import ImageEight from "./images/image (-16.png";
-import ImageNine from "./images/image (-17.png";
+import { client } from "@/lib/sanity.client";
+import { ProjectWithPropertyImage } from "@/lib/sanity.types";
+import { projectsWithPropertyImageQuery } from "@/lib/sanity.queries";
+import SanityImage from "@/components/sanity-image";
+import Link from "next/link";
 
-const data = [
-  { image: ImageOne, alt: "Image One", href: "/" },
-  { image: ImageTwo, alt: "Image Two", href: "/" },
-  { image: ImageThree, alt: "Image Three", href: "/" },
-  { image: ImageFour, alt: "Image Four", href: "/" },
-  { image: ImageFive, alt: "Image Five", href: "/" },
-  { image: ImageSix, alt: "Image Six", href: "/" },
-  { image: ImageSeven, alt: "Image Seven", href: "/" },
-  { image: ImageEight, alt: "Image Eight", href: "/" },
-  { image: ImageNine, alt: "Image Nine", href: "/" },
-];
+const FirstSection = async () => {
+  const projects = await client.fetch<ProjectWithPropertyImage[]>(
+    projectsWithPropertyImageQuery
+  );
 
-const FirstSection = () => {
+  const commercialProjects = projects.filter(
+    (project) => project.projectType === "commercial"
+  );
+
+  if (commercialProjects.length === 0) {
+    return null;
+  }
+
   return (
     <div className="py-12 sm:py-16 md:py-20 lg:py-24 bg-stone-50">
       <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-5 md:space-y-6 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
@@ -36,15 +31,20 @@ const FirstSection = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
-        {data.map((item, index) => (
-          <Image
-            key={index}
-            src={item.image}
-            alt={item.alt}
-            width={500}
-            height={500}
-            className="w-full"
-          />
+        {commercialProjects.map((project) => (
+          <Link
+            href={`/project/${project.slug}`}
+            key={project._id}
+            className="cursor-pointer flex"
+          >
+            <SanityImage
+              image={project.propertyImageWithLogo}
+              alt={project.name}
+              width={500}
+              height={500}
+              className="w-full h-full object-cover"
+            />
+          </Link>
         ))}
       </div>
     </div>

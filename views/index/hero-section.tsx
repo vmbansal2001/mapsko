@@ -35,7 +35,7 @@ const HeroSection = () => {
               BUILDING DREAMS, CREATING LEGACIES
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl">
-              Premium Real Estate Excellence Since 1960s
+              Premium Real Estate Excellence
             </p>
 
             <Link

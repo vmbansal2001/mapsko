@@ -1,10 +1,22 @@
 import Logo from "@/assets/icons/mapsko-logo.svg";
-import FirstImage from "./gated-community.png";
-import SecondImage from "./580ad2ae32741759cb647dcb76038cf396f90a13.png";
-import ThirdImage from "./140d0c093fd215bf5850833306f67ba807b27307.png";
-import ProjectDisplayCard from "@/components/project-display-card";
+import { client } from "@/lib/sanity.client";
+import { ProjectWithSlider } from "@/lib/sanity.types";
+import { projectsWithSliderQuery } from "@/lib/sanity.queries";
+import ProjectDisplayCardV2 from "@/components/project-display-card-v2";
 
-const SecondSection = () => {
+const SecondSection = async () => {
+  const projects = await client.fetch<ProjectWithSlider[]>(
+    projectsWithSliderQuery
+  );
+
+  if (projects.length === 0) {
+    return null;
+  }
+
+  const filteredProjects = projects.filter(
+    (project) => project.projectType === "residential"
+  );
+
   return (
     <div className="pt-6 sm:pt-8 md:pt-12 lg:pt-16 xl:pt-20">
       <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-5 md:space-y-6 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
@@ -17,42 +29,14 @@ const SecondSection = () => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row *:w-full text-white text-center">
-        <ProjectDisplayCard
-          imageSrc={FirstImage}
-          linkHref="/"
-          title="Mapsko Gardenia"
-          location="Sector 26A, Sonipat"
-          subPoints={[
-            "Status: Super Structure Completed",
-            "Experience nature-centric living in the heart of Sonipat. Premium apartments with world-class amenities and seamless connectivity",
-          ]}
-          gradientColor="#0B6BB8"
-        />
-
-        <ProjectDisplayCard
-          imageSrc={SecondImage}
-          linkHref="/"
-          title="Mapsko The Icon 79"
-          location="Sector-79, Gurugram"
-          subPoints={[
-            "Status: Super Structure Completed",
-            "Luxury redefined in Gurugram's prime location. Modern architecture meets sophisticated living.",
-          ]}
-          gradientColor="#8AC028"
-        />
-
-        <ProjectDisplayCard
-          imageSrc={ThirdImage}
-          linkHref="/"
-          title="Mapsko ASPR Hills"
-          location="Sector-78, Gurugram"
-          subPoints={[
-            "Status: OC Completed",
-            "Elevated living experience with panoramic views and premium amenities in New Gurugram.",
-          ]}
-          gradientColor="#0B6BB8"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 *:w-full text-white text-center">
+        {filteredProjects.map((project, index) => (
+          <ProjectDisplayCardV2
+            key={project._id}
+            projectSlider={project}
+            gradientColor={index % 2 === 0 ? "#0B6BB8" : "#8AC028"}
+          />
+        ))}
       </div>
     </div>
   );

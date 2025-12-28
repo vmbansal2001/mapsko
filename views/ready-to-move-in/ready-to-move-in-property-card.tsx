@@ -1,9 +1,10 @@
-import Image from "next/image";
+import SanityImage from "@/components/sanity-image";
 import Link from "next/link";
+import { Image } from "sanity";
 
 type Props = {
-  imageSrc: string;
-  logoSrc: string;
+  imageSrc: Image;
+  logoSrc: Image;
   title: string;
   address: string;
   description: string;
@@ -29,22 +30,19 @@ const ReadyToMoveInPropertyCard = ({
           } lg:gap-32 gap-12 items-center justify-between`}
         >
           <div className="flex w-full lg:min-w-[600px] lg:max-w-[600px] lg:h-[600px] ">
-            <Image
-              src={imageSrc}
+            <SanityImage
+              image={imageSrc}
               alt={title}
               width={1200}
-              height={800}
               className="object-cover shadow-lg w-full h-full"
-              priority
             />
           </div>
           <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6">
             <div className="w-40 sm:w-48 md:w-56">
-              <Image
-                src={logoSrc}
+              <SanityImage
+                image={logoSrc}
                 alt={`${title} logo`}
                 width={300}
-                height={160}
                 className="w-full h-auto object-contain"
               />
             </div>
@@ -64,7 +62,7 @@ const ReadyToMoveInPropertyCard = ({
                 href={linkHref}
                 className="inline-flex w-fit items-center justify-center border-2 border-sky-600 text-sky-700 font-semibold px-5 sm:px-7 py-3 hover:bg-sky-50 transition-colors"
               >
-                Visit Website
+                View Project
               </Link>
             ) : null}
           </div>

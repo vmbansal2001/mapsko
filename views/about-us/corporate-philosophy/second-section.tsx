@@ -18,11 +18,13 @@ const SecondSection = () => {
             </span>
             <span className="text-neutral-500 text-base sm:text-lg font-light font-['Avenir']">
               <br />
-              "Our vision is to construct a new India. Beyond real estate, we
-              strive to transform lives, landscapes and living habits of people.
-              We aspire to be an exemplary corporate who does its job well; a
-              name synonymous with trust, integrity, growth and global
-              recognition."
+              Our vision is to redefine contemporary living in India. Beyond
+              building homes, we curate sophisticated lifestyles that inspire
+              comfort, connection, and well-being for modern families. Every
+              MAPSKO development is crafted to blend timeless luxury with
+              thoughtful design, smart spaces, and refined experiences. We
+              aspire to be a name synonymous with elegance, trust, innovation,
+              and global standards of modern living.
             </span>
           </div>
         </div>

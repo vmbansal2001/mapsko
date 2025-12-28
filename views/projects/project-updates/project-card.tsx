@@ -1,27 +1,28 @@
-import Image from "next/image";
+import SanityImage from "@/components/sanity-image";
 import Link from "next/link";
-import React from "react";
+import { Image } from "sanity";
 
 type Props = {
   title: string;
   subtext: string;
-  logoUrl: string;
+  logoImage: Image;
   href: string;
   className?: string;
 };
 
-const ProjectCard = ({ title, subtext, logoUrl, href, className }: Props) => {
+const ProjectCard = ({ title, subtext, logoImage, href, className }: Props) => {
   return (
     <div
       className={`w-full border-8 border-[#F9F9F9] p-4 md:p-10 flex flex-col items-center justify-between ${className}`}
     >
-      <Image
-        src={logoUrl}
-        alt={title}
-        width={500}
-        height={500}
-        className="w-full h-auto object-cover max-w-[250px] md:max-w-[350px]"
-      />
+      <div className="w-full h-full max-w-[350px] mx-auto">
+        <SanityImage
+          image={logoImage}
+          alt={title}
+          width={350}
+          className="w-full h-auto object-cover max-w-[250px] md:max-w-[350px]"
+        />
+      </div>
 
       <div className="text-sky-700 text-lg md:text-xl upppercase font-bold pt-10 md:pt-16">
         {title}

@@ -50,7 +50,10 @@ export const projectBySlugQuery = groq`
     sliderPhoto,
     shortAddress,
     statusText,
-    sliderDescription
+    sliderDescription,
+    registrationCode,
+    propertyImageWithLogo,
+    readyToMoveInContent
   }
 `;
 
@@ -75,7 +78,51 @@ export const projectsWithSliderQuery = groq`
     sliderPhoto,
     shortAddress,
     statusText,
-    sliderDescription
+    sliderDescription,
+    projectType
+  }
+`;
+
+export const projectsForFooterQuery = groq`
+  *[_type == "project" && defined(slug.current) && defined(projectType)]
+    | order(name asc){
+      _id,
+      name,
+      "slug": slug.current,
+      projectType
+    }
+`;
+
+export const projectsWithPropertyImageQuery = groq`
+  *[_type == "project" && defined(propertyImageWithLogo) && defined(slug.current)]{
+    _id,
+    name,
+    "slug": slug.current,
+    propertyImageWithLogo,
+    projectType
+  }
+`;
+
+export const projectsByStatusQuery = groq`
+  *[_type == "project" && projectStatus == $status && defined(propertyLogo) && defined(slug.current)]{
+    _id,
+    "slug": slug.current,
+    registrationCode,
+    propertyLogo
+  }
+`;
+
+export const readyToMoveInProjectsQuery = groq`
+  *[_type == "project" && defined(slug.current)]{
+    _id,
+    name,
+    "slug": slug.current,
+    propertyImageWithLogo,
+    primaryPropertyPhoto,
+    propertyLogo,
+    shortAddress,
+    readyToMoveInContent,
+    about
   }
 `;
 

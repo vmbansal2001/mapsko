@@ -2,6 +2,7 @@ import BuildingIcon from "./building.svg";
 import PhoneIcon from "./phone.svg";
 import EmailIcon from "./email.svg";
 import Logo from "@/assets/icons/mapsko-logo.svg";
+import AtSymbolIcon from "@/assets/icons/at-symbol.svg";
 
 const FirstSection = () => {
   return (
@@ -9,10 +10,10 @@ const FirstSection = () => {
       <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-5 md:space-y-6 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
         <Logo className="w-10 sm:w-12 md:w-14" />
         <h2 className="text-sky-700 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase text-center px-4">
-          Careers at MAPSKO
+          We&apos;re Here to Help
         </h2>
         <p className="text-center text-neutral-500 text-sm sm:text-base md:text-lg font-light uppercase px-4">
-          Build the Future With Us
+          Premium spaces, prompt responses
         </p>
       </div>
 
@@ -27,8 +28,9 @@ const FirstSection = () => {
             Corporate Office
           </h3>
           <p className="text-[15px] md:text-[16px] leading-6 text-[#707070] max-w-xl">
-            <span className="font-semibold">Address :</span> Baani The Address,
-            1, 6th Floor, Golf Course Rd, Sector 56, Gurugram, Haryana 122011
+            {/* <span className="font-semibold">Address :</span>  */}
+            Baani The Address, 1, 6th Floor, Golf Course Rd, Sector 56,
+            Gurugram, Haryana 122011
           </p>
         </div>
 
@@ -42,7 +44,7 @@ const FirstSection = () => {
             Phone Number
           </h3>
           <p className="text-[15px] md:text-[16px] leading-6 text-[#707070]">
-            <span className="font-semibold">Phone </span>
+            {/* <span className="font-semibold">Phone </span> */}
             +(91)-(124)-4250610/20/30
           </p>
         </div>
@@ -58,10 +60,22 @@ const FirstSection = () => {
           </h3>
           <div className="text-[15px] md:text-[16px] leading-6 text-[#707070] space-y-1">
             <p>
-              <span className="font-semibold">Email :</span>{" "}
-              sales@mapskogroup.com
+              sales
+              <AtSymbolIcon
+                className="inline-block mx-0.5 w-4 h-4 align-middle"
+                aria-label="at"
+                aria-hidden="true"
+              />
+              mapskogroup.com
+              <br />
+              info
+              <AtSymbolIcon
+                className="inline-block mx-0.5 w-4 h-4 align-middle"
+                aria-label="at"
+                aria-hidden="true"
+              />
+              mapskogroup.com
             </p>
-            <p>info@mapskogroup.com</p>
           </div>
         </div>
       </div>

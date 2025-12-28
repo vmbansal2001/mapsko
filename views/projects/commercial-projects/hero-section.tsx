@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <div>
       <ImageBackground
-        src="/assets/corporate-philosophy-hero.png"
+        src="/assets/hero-banners/commercial-projects-hero.png"
         overlayOpacity={0.6}
         alt="landing-hero"
         width={1000}

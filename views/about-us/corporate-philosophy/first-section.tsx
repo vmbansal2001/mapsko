@@ -22,31 +22,30 @@ const FirstSection = () => {
         </span>
         <span className="text-neutral-500 text-base sm:text-lg font-light font-['Avenir']">
           <br />
-          "Our mission is the path we initiate to reach our goals, be it long or
-          short term. And the path involves embracing new technologies,
-          researching on better ideas, applying new concepts and cultivating
-          long-term relationships."
+          Our mission is the path we initiate to reach our goals, be it
+          long-term or short-term. And the path involves embracing new
+          technologies, researching better ideas, applying new concepts, and
+          cultivating long-term relationships.
           <br />
           <br />
           One of the core principles of the Mapsko Group is to value time and
           resources. It is considered to be one of the driving forces of the
           organization. Time management has always been a priority at Mapsko.
-          The management takes it very seriously. "We harness a reputation for
+          The management takes it very seriously. We have a reputation for
           executing projects in record time frames and keeping up with accurate
-          planning and resource deployment."
+          planning and resource deployment.
           <br />
           <br />
-          At Mapsko, the customer is not just a one-time association, but he is
-          the ambassador of the brand and the lifeblood of the organization.
-          Customer focus is about understanding, listening and delivering what
-          people need, when they need it. Trust and integrity is built on
+          At Mapsko, the customer is not just a one-time association, but they
+          are the ambassador of the brand and the lifeblood of the organization.
+          Customer focus is about understanding, listening, and delivering what
+          people need, when they need it. Trust and integrity are built on
           fairness and reliability.
           <br />
           <br />
-          "We manage a positive work environment by being happy in our work
-          place and enjoying what we do. And our passion for creation grows with
-          every project, which we encounter as a challenge to set definite
-          goals."
+          We manage a positive work environment by being happy in our workplace
+          and enjoying what we do. And our passion for creation grows with every
+          project, which we encounter as a challenge to set definite goals.
         </span>
       </div>
     </div>

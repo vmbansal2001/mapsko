@@ -1,45 +1,26 @@
 import Logo from "@/assets/icons/mapsko-logo.svg";
 import ProjectCard from "./project-card";
+import { client } from "@/lib/sanity.client";
+import { ProjectUpdateItem } from "@/lib/sanity.types";
+import { projectsByStatusQuery } from "@/lib/sanity.queries";
 
-const BuiltAndHandover = () => {
-  const ongoingProjects = [
-    {
-      title: "OC Received",
-      subtext: "HRERA Regd No. 328 of 2017 dated 23.10.2017",
-      logoUrl: "/assets/residential-projects/logos/mount-ville.png",
-      href: "/project/mount-ville",
-    },
-    {
-      title: "",
-      subtext: "",
-      logoUrl: "/assets/residential-projects/logos/city-homes.png",
-      href: "/project/aspr-greenz",
-    },
-    {
-      title: "H-RERA Registration NO- 22 OF 2023",
-      subtext: "Construction is in full swing",
-      logoUrl: "/assets/residential-projects/logos/galleria.png",
-      href: "/project/aspr-hills",
-    },
-    {
-      title: "HRERA NO - HRERA 33 OF 2023",
-      subtext: "Construction is in full swing",
-      logoUrl: "/assets/residential-projects/logos/shopping-arcade.png",
-      href: "/project/icon-79",
-    },
-    {
-      title: "HRERA-PKL-SNP-343-2022",
-      subtext: "",
-      logoUrl: "/assets/residential-projects/logos/royale-plaza.png",
-      href: "/project/garden-estate-2",
-    },
-    {
-      title: "HRERA-PKL-SNP-343-2022",
-      subtext: "",
-      logoUrl: "/assets/residential-projects/logos/paradise.png",
-      href: "/project/garden-estate-2",
-    },
-  ];
+const BuiltAndHandover = async () => {
+  const projects = await client.fetch<ProjectUpdateItem[]>(
+    projectsByStatusQuery,
+    { status: "completed" }
+  );
+
+  const completedProjects = projects.map((project) => ({
+    id: project._id,
+    title: project.registrationCode || "",
+    subtext: "",
+    logoImage: project.propertyLogo,
+    href: `/project/${project.slug}`,
+  }));
+
+  if (completedProjects.length === 0) {
+    return null;
+  }
 
   return (
     <section className="bg-stone-50">
@@ -54,12 +35,12 @@ const BuiltAndHandover = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {ongoingProjects.map((project, index) => (
+          {completedProjects.map((project) => (
             <ProjectCard
-              key={index}
+              key={project.id}
               title={project.title}
               subtext={project.subtext}
-              logoUrl={project.logoUrl}
+              logoImage={project.logoImage}
               href={project.href}
               className="border-white"
             />

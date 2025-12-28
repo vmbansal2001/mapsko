@@ -1,8 +1,6 @@
 import Logo from "@/assets/icons/mapsko-logo.svg";
-import ProjectDisplayCard from "@/components/project-display-card";
 import { client } from "@/lib/sanity.client";
 import { projectsWithSliderQuery } from "@/lib/sanity.queries";
-import { urlForImage } from "@/lib/sanity.image";
 import type { ProjectWithSlider } from "@/lib/sanity.types";
 import ProjectDisplayCardV2 from "@/components/project-display-card-v2";
 

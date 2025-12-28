@@ -6,7 +6,7 @@ const FirstSection = () => {
   return (
     <div className="common-frame-box py-12 md:py-16 lg:py-20 xl:py-28 space-y-12">
       <div className="flex flex-col md:flex-row md:gap-28 gap-12">
-        <div className="md:min-w-[500px] md:max-w-[500px] md:min-h-[500px] md:max-h-[500px]">
+        {/* <div className="md:min-w-[500px] md:max-w-[500px] md:min-h-[500px] md:max-h-[500px]">
           <Image
             src={AmritSinglaImage}
             alt="Amrit Single"
@@ -23,7 +23,7 @@ const FirstSection = () => {
               (Former chairman , Mapsko Group)
             </span>
           </div>
-        </div>
+        </div> */}
 
         <div className="">
           <Logo className="h-[100px]" />
@@ -33,33 +33,34 @@ const FirstSection = () => {
             </p>
             <p className="text-neutral-500 text-base md:text-lg font-light">
               <br />
-              MAPSKO is a leading and growing real estate organization,
-              reckoning its position among the top-notch developers. This is
-              exemplified by its world-class structures and services. It is also
-              India's blossoming real estate developer, a company that
-              meticulously cultivates flowers of concrete and glass for
-              commercial and residential use. Each structure follows the pattern
-              of a distinct signature. We carved a niche for ourselves in the
-              burgeoning field of real estate development and construction. For
-              over a decade, the company has consistently set quality benchmarks
-              in property development by creating world-class townships and
-              commercial spaces in prime locations.
+              MAPSKO is a leading real estate developer known for creating
+              world-class residential and commercial developments. With a strong
+              focus on quality, innovation, and design excellence, the brand has
+              earned its position among India's top real estate companies. Each
+              project reflects a distinct architectural identity, redefining
+              modern lifestyles beyond concrete and steel.
               <br />
               <br />
-              The Krishna Apra group was set up on March 13, 1997, formally by
-              Late Mr. Amrit Singla (Director, Apra Builders Ltd.) and Jai
-              Krishan Estate Pvt. Ltd. The mission of Late Mr. Amrit Singla
-              (Director, Apra Builders Ltd and Jai Krishan Estate Pvt. Ltd.) was
-              to create a lifestyle within the garden of greens. Apart from
-              this, they have greater status de persona in their social,
-              economic and family spheres. The results show the value and
-              importance of their performance in the field of real estate.
+              Rooted in the legacy of the Krishna Apra Group, established in
+              1997 by Mr. Amrit Singla and Jai Krishan Estate Pvt. Ltd., MAPSKO
+              was conceptualized in 2003 with a vision to create
+              lifestyle-driven developments integrated with green and
+              sustainable environments. The Group brings together expertise
+              across architecture, engineering, planning, management, finance,
+              and legal domains to meet diverse client needs.
+              <br />
+              <br />
+              For over a decade, MAPSKO has consistently set benchmarks in real
+              estate development by delivering landmark townships and commercial
+              spaces in prime locations, achieving international quality
+              standards through value engineering and advanced construction
+              practices.
             </p>
           </div>
         </div>
       </div>
 
-      <p className="text-neutral-500 text-base md:text-lg font-light">
+      {/* <p className="text-neutral-500 text-base md:text-lg font-light">
         A name that emerged for the promoters of the Krishna Apra Group, an
         entity born to reform the builder's world, is MAPSKO, conceptualized on
         Jan 21, 2003, with a good amount of investment. The Group has pooled in
@@ -83,7 +84,7 @@ const FirstSection = () => {
         addresses across the globe. We try to achieve international quality
         standards through cutting-edge value engineering and intelligent
         resource management
-      </p>
+      </p> */}
     </div>
   );
 };

@@ -15,16 +15,16 @@ const SecondSection = () => {
             </p>
             <p className="text-neutral-500 text-base md:text-lg font-light">
               <br />
-              From the visionary leadership of the late Mr. Amrit Singhla Ji,
-              the reins of the group have gracefully passed to the capable hands
-              of Mr. Krishan Singhla Ji, our current guiding force. Mr Krishan
+              From the visionary leadership of the late Mr. Amrit Singla Ji, the
+              reins of the group have gracefully passed to the capable hands of
+              Mr. Krishan Singla Ji, our current guiding force. Mr Krishan
               Singla, an exceptional first-generation entrepreneur and
               visionary, is charting our company's course with expertise and
-              dedication and has steered the MAPSKO Group to remarkable success
-              . As Chairman, he has led diverse ventures, including Jai Krishan
+              dedication and has steered the MAPSKO Group to remarkable success.
+              As Chairman, he has led diverse ventures, including Jai Krishan
               Estates Pvt Ltd, Apra Builders Ltd, and Mapsko Infrastructure Pvt
-              Ltd, shoping the conglomerate's prominence in North India. With a
-              legacy rooted in real estate since the late 1960s, Mr Singla
+              Ltd, showcasing the conglomerate's prominence in North India. With
+              a legacy rooted in real estate since the late 1960s, Mr Singla
               pioneers the industry and serves as a driving force behind nearly
               20 successful residential and commercial projects across Delhi and
               the NCR. His leadership underscores the group's exponential growth
