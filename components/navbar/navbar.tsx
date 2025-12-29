@@ -182,7 +182,7 @@ const Navbar = () => {
         <div className="hidden md:block shrink-0">
           <Link
             href="/contact"
-            className="border uppercase border-[#8AC028] hover:bg-[#8AC028] hover:text-black cursor-pointer transition-all duration-300 py-2 px-4 md:px-5 lg:px-6 xl:px-8 text-[#8AC028] font-bold text-xs md:text-xs lg:text-sm xl:text-base whitespace-nowrap"
+            className="border uppercase border-[#8AC028] hover:bg-[#8AC028] leading-none hover:text-black cursor-pointer transition-all duration-300 py-2 px-4 md:px-5 lg:px-6 xl:px-8 text-[#8AC028] font-bold text-xs md:text-xs lg:text-sm xl:text-base whitespace-nowrap"
           >
             Contact Us
           </Link>

@@ -3,7 +3,7 @@ import React from "react";
 
 const FirstSection = () => {
   return (
-    <div className="common-frame-box py-8 sm:py-12 md:py-16 lg:py-20 xl:py-28 flex flex-col lg:flex-row justify-between items-center gap-8 sm:gap-12 md:gap-16 lg:gap-24">
+    <div className="common-frame-box py-8 sm:py-12 md:py-16 lg:py-20 xl:py-28 flex flex-col lg:flex-row justify-around items-center gap-8 sm:gap-12 md:gap-16 lg:gap-24">
       <div className="w-full lg:w-auto shrink-0">
         <Image
           src="/assets/mapsko-detailed-logo.png"
@@ -17,7 +17,7 @@ const FirstSection = () => {
         <span className="text-sky-700 text-2xl sm:text-3xl md:text-4xl font-bold uppercase">
           Mission in Motion:
           <br />
-          Technology, Trust & Timelines
+          Trust & Timelines
           <br />
         </span>
         <span className="text-neutral-500 text-base sm:text-lg font-light">
