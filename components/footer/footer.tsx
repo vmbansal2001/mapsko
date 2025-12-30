@@ -58,8 +58,7 @@ const Footer = async () => {
             <div className="flex flex-col gap-4 text-sm md:text-base">
               <Logo aria-label="Mapsko logo" className="md:w-[260px] w-32" />
               <p className="max-w-[340px] leading-relaxed">
-                Experience unmatched comfort and luxury with GHD Infra -
-                redefining living for you.
+                Building premium homes & commercial landmarks across Delhi-NCR.
               </p>
               <div className="flex items-center gap-3 pt-1">
                 {socialLinks.map(({ label, href, icon: Icon }) => (
