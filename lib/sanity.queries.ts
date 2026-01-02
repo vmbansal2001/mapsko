@@ -159,3 +159,25 @@ export const allBlogsQuery = groq`
     createdDate
   }
 `;
+
+export const allNewsQuery = groq`
+  *[_type == "news"] | order(_createdAt desc){
+    _id,
+    title,
+    "slug": slug.current,
+    shortDescription,
+    coverImage
+  }
+`;
+
+export const newsBySlugQuery = groq`
+  *[_type == "news" && slug.current == $slug][0]{
+    _id,
+    title,
+    "slug": slug.current,
+    shortDescription,
+    coverImage,
+    content,
+    bannerImage,
+  }
+`;

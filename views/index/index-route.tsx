@@ -8,6 +8,7 @@ import FifthSection from "./fifth-section/fifth-section";
 import SixthSection from "./sixth-section/sixth-section";
 import Footer from "@/components/footer/footer";
 import ParallaxWindow from "@/components/parallax-window";
+import NewsSection from "../news-section/news-section";
 
 const IndexRoute = () => {
   return (
@@ -23,6 +24,7 @@ const IndexRoute = () => {
       />
       <FourthSection />
       <FifthSection />
+      <NewsSection />
       <SixthSection />
       <Footer />
     </main>

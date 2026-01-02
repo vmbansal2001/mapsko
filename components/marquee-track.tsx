@@ -39,7 +39,7 @@ export const MarqueeTrack = ({
     const handleMouseEnter = () => {
       if (animationRef.current) {
         // Smoothly transition to slower speed
-        animationRef.current.playbackRate = 0.2; // 5x slower
+        animationRef.current.playbackRate = 0.5; // 2x slower
       }
     };
 
