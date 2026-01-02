@@ -82,8 +82,8 @@ const Footer = async () => {
               <p>
                 <span className="font-semibold">Corporate Office :</span>
                 <br />
-                Baani The Address, 1, 6th Floor, Golf Course Rd, Sector 56,
-                Gurugram, Haryana 122011
+                6th Floor, Baani The Address, No.1, Golf Course Road, Sector-56,
+                Gurgaon-122011, Haryana, India
               </p>
               <div className="flex flex-col">
                 <p className="font-semibold">Inquiry :</p>

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import BuildingIcon from "./building.svg";
-import PlotIcon from "./plot.svg";
+import HappyFamiliesIcon from "./happy-families.svg";
 import PlotTwoIcon from "./plot-two.svg";
 import G183Icon from "./g183.svg";
 
@@ -9,22 +9,22 @@ const points = [
   {
     icon: BuildingIcon,
     label: "Projects Successfully Delivered",
-    value: 9,
+    value: "11+",
   },
   {
     icon: G183Icon,
-    label: "Major Residential Projects",
-    value: 6,
+    label: "Under Construction Projects",
+    value: "4",
   },
   {
     icon: PlotTwoIcon,
-    label: "Lakhs Square Feet Delivered",
-    value: 13,
+    label: "Million Square Feet Delivered",
+    value: "2",
   },
   {
-    icon: PlotIcon,
-    label: "Major Commercial Project",
-    value: 3,
+    icon: HappyFamiliesIcon,
+    label: "Happy Families",
+    value: "10,000+",
   },
 ];
 
@@ -45,9 +45,9 @@ const FirstSection = () => {
               India's blossoming real estate developer.
             </p>
             <p>
-              With a legacy rooted in real estate since the late 1960s, we have
-              been the driving force behind nearly 20 successful residential and
-              commercial projects across Delhi and the NCR.
+              With a legacy rooted in real estate since the late 1990s, we have
+              been the driving force behind nearly 25+ successful residential
+              and commercial projects across Delhi and the NCR.
             </p>
             <p>
               Our commitment to excellence underscores exponential growth and

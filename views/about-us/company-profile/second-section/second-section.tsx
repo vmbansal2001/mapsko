@@ -24,11 +24,11 @@ const SecondSection = () => {
               As Chairman, he has led diverse ventures, including Jai Krishan
               Estates Pvt Ltd, Apra Builders Ltd, and Mapsko Infrastructure Pvt
               Ltd, showcasing the conglomerate's prominence in North India. With
-              a legacy rooted in real estate since the late 1960s, Mr Singla
+              a legacy rooted in real estate since the late 1990s, Mr Singla
               pioneers the industry and serves as a driving force behind nearly
-              20 successful residential and commercial projects across Delhi and
-              the NCR. His leadership underscores the group's exponential growth
-              and his role as a trailblazing figure in the field.
+              25+ successful residential and commercial projects across Delhi
+              and the NCR. His leadership underscores the group's exponential
+              growth and his role as a trailblazing figure in the field.
             </p>
           </div>
         </div>

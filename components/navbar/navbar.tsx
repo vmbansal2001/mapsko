@@ -16,6 +16,11 @@ const Navbar = () => {
 
   const links = [
     {
+      label: "Home",
+      href: "/",
+      isActive: true,
+    },
+    {
       label: "About Us",
       href: "",
       subRoutes: [

@@ -20,7 +20,7 @@ const points = [
   {
     icon: TimelyDelivery,
     title: "Timely Delivery",
-    descriptionPointOne: "Reputation for executing projects in record time",
+    descriptionPointOne: "Reputation for executing projects before record time",
     descriptionPointTwo: "Accurate planning and resource deployment",
   },
   {

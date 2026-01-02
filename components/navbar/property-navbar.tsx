@@ -17,6 +17,11 @@ const PropertyNavbar = ({ property }: PropertyNavbarProps) => {
 
   const links = [
     {
+      label: "Home",
+      href: `/project/${property.slug}`,
+      enabled: true,
+    },
+    {
       label: "About Us",
       href: `/project/${property.slug}/about`,
       enabled: true,

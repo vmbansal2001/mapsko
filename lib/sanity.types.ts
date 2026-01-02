@@ -123,3 +123,13 @@ export interface BlogDocument {
   content: PortableTextBlock[];
   createdDate: string;
 }
+
+export interface NewsDocument {
+  _id: string;
+  title: string;
+  slug: string;
+  shortDescription: string;
+  coverImage: Image;
+  bannerImage: Image;
+  content: PortableTextBlock[];
+}
