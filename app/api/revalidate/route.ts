@@ -34,6 +34,7 @@ export async function POST(req: NextRequest) {
     const routeMap: Record<string, string> = {
       project: "/project",
       blog: "/blog",
+      news: "/news",
     };
 
     const basePath = routeMap[documentType];
@@ -56,11 +57,7 @@ export async function POST(req: NextRequest) {
         // Also revalidate the listing page (e.g., /blog, /projects)
         revalidatePath(basePath, "page");
 
-        if (documentType === "project") {
-          additionalProjectPaths.forEach((path) =>
-            revalidatePath(path, "page")
-          );
-        }
+        additionalProjectPaths.forEach((path) => revalidatePath(path, "page"));
 
         console.log(`Revalidated ${documentType} page: ${pagePath}`);
 
@@ -74,11 +71,9 @@ export async function POST(req: NextRequest) {
         // If slug is missing, revalidate all pages of this type
         // This is useful for deletions or when slug changes
         revalidatePath(basePath, "layout");
-        if (documentType === "project") {
-          additionalProjectPaths.forEach((path) =>
-            revalidatePath(path, "layout")
-          );
-        }
+        additionalProjectPaths.forEach((path) =>
+          revalidatePath(path, "layout")
+        );
         console.log(`Revalidated all ${documentType} pages (slug missing)`);
 
         return NextResponse.json({
