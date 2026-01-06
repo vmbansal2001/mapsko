@@ -90,11 +90,12 @@ export const projectsWithSliderQuery = groq`
 
 export const projectsForFooterQuery = groq`
   *[_type == "project" && defined(slug.current) && defined(projectType)]
-    | order(name asc){
+    | order(rankingIndex asc, name asc){
       _id,
       name,
       "slug": slug.current,
-      projectType
+      projectType,
+      rankingIndex
     }
 `;
 

@@ -38,12 +38,28 @@ const Footer = async () => {
     projectsForFooterQuery
   );
 
-  const residentialProjects = projects.filter(
-    (p) => p.projectType === "residential"
-  );
-  const commercialProjects = projects.filter(
-    (p) => p.projectType === "commercial"
-  );
+  const residentialProjects = projects
+    .filter((p) => p.projectType === "residential")
+    .sort((a, b) => {
+      // Sort by rankingIndex first (lower numbers first), then by name
+      if (a.rankingIndex !== undefined && b.rankingIndex !== undefined) {
+        return a.rankingIndex - b.rankingIndex;
+      }
+      if (a.rankingIndex !== undefined) return -1;
+      if (b.rankingIndex !== undefined) return 1;
+      return a.name.localeCompare(b.name);
+    });
+  const commercialProjects = projects
+    .filter((p) => p.projectType === "commercial")
+    .sort((a, b) => {
+      // Sort by rankingIndex first (lower numbers first), then by name
+      if (a.rankingIndex !== undefined && b.rankingIndex !== undefined) {
+        return a.rankingIndex - b.rankingIndex;
+      }
+      if (a.rankingIndex !== undefined) return -1;
+      if (b.rankingIndex !== undefined) return 1;
+      return a.name.localeCompare(b.name);
+    });
 
   return (
     <footer className="bg-[#0B6BB8] text-white">

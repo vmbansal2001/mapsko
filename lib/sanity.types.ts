@@ -84,6 +84,7 @@ export interface ProjectFooterItem {
   name: string;
   slug: string;
   projectType: "residential" | "commercial";
+  rankingIndex?: number;
 }
 
 export interface ProjectWithPropertyImage {

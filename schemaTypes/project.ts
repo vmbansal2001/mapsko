@@ -351,6 +351,14 @@ export default defineType({
 
     // Other
     defineField({
+      name: "rankingIndex",
+      title: "Ranking Index",
+      type: "number",
+      group: "other",
+      description:
+        "Used to sort projects in a particular order (lower numbers appear first)",
+    }),
+    defineField({
       name: "registrationCode",
       title: "Registration Code",
       type: "string",
