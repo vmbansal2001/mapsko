@@ -20,11 +20,13 @@ export default function TestimonialVideo({
   const instanceId = useId();
   const videoId = `testimonial-video-${instanceId}`;
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isTouchLike, setIsTouchLike] = useState(false);
   const [isBuffering, setIsBuffering] = useState(false);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
     // Show the overlay affordance on devices that don't support hover (touch).
@@ -55,6 +57,49 @@ export default function TestimonialVideo({
       );
   }, [instanceId]);
 
+  // Intersection Observer for autoplay on viewport entry
+  useEffect(() => {
+    if (
+      typeof window === "undefined" ||
+      !containerRef.current ||
+      !videoRef.current
+    )
+      return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Video entered viewport - autoplay muted
+            if (videoRef.current && (videoRef.current.paused || !hasPlayed)) {
+              videoRef.current.muted = true;
+              videoRef.current.play().catch(() => {
+                // Ignore autoplay errors
+              });
+              setHasPlayed(true);
+            }
+          } else {
+            // Video left viewport - pause and reset
+            if (videoRef.current && !videoRef.current.paused) {
+              videoRef.current.pause();
+              videoRef.current.currentTime = 0;
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of video is visible
+        rootMargin: "0px",
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [hasPlayed]);
+
   const requestPlay = async () => {
     if (!videoRef.current) return;
 
@@ -79,7 +124,13 @@ export default function TestimonialVideo({
 
   const togglePlayback = async () => {
     if (!videoRef.current) return;
-    if (videoRef.current.paused || videoRef.current.ended) return requestPlay();
+    if (videoRef.current.paused || videoRef.current.ended) {
+      // If clicking to play, allow unmuting
+      if (videoRef.current.muted && hasPlayed) {
+        videoRef.current.muted = false;
+      }
+      return requestPlay();
+    }
     videoRef.current.pause();
   };
 
@@ -87,6 +138,7 @@ export default function TestimonialVideo({
 
   return (
     <div
+      ref={containerRef}
       className={[
         "group relative isolate overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/10 shadow-[0_18px_50px_-25px_rgba(0,0,0,0.65)]",
         "transition-transform duration-300 will-change-transform hover:-translate-y-0.5",
@@ -104,9 +156,17 @@ export default function TestimonialVideo({
         playsInline
         preload="metadata"
         controls={false}
+        muted
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
-        onEnded={() => setIsPlaying(false)}
+        onEnded={() => {
+          setIsPlaying(false);
+          // Restart if ended
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play().catch(() => {});
+          }
+        }}
         onWaiting={() => setIsBuffering(true)}
         onPlaying={() => setIsBuffering(false)}
       />
