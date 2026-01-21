@@ -9,7 +9,7 @@ const points = [
   {
     icon: BuildingIcon,
     label: "Projects Successfully Delivered",
-    value: "11+",
+    value: "22+",
   },
   {
     icon: G183Icon,
@@ -18,8 +18,8 @@ const points = [
   },
   {
     icon: PlotTwoIcon,
-    label: "Million Square Feet Delivered",
-    value: "2",
+    label: "Crore Square Feet Delivered",
+    value: "1.1",
   },
   {
     icon: HappyFamiliesIcon,
@@ -46,7 +46,7 @@ const FirstSection = () => {
             </p>
             <p>
               With a legacy rooted in real estate since the late 1990s, we have
-              been the driving force behind nearly 25+ successful residential
+              been the driving force behind nearly 22+ successful residential
               and commercial projects across Delhi and the NCR.
             </p>
             <p>
