@@ -9,9 +9,9 @@ import ThirdSection from "@/views/projects/residential-projects/third-section.ts
 type Props = {};
 
 export const metadata = {
-  title: "Residential Projects in Gurugram | Mapsko",
+  title: "Residential Projects in Gurgaon & Delhi NCR | Mapsko",
   description:
-    "Explore Mapsko’s luxury residential projects in Gurugram, featuring premium amenities, thoughtfully designed spaces, and prime connectivity.",
+    "Explore Mapsko residential projects in Gurgaon and across NCR, luxury flats, plots and apartments designed for modern living with strong connectivity.",
   alternates: {
     canonical: absoluteUrl("/projects/residential-projects"),
   },

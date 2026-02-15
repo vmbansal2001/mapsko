@@ -5,9 +5,9 @@ import FirstSection from "@/views/projects/commercial-projects/first-section/fir
 import Footer from "@/components/footer/footer";
 
 export const metadata = {
-  title: "Commercial Projects in Gurugram | Mapsko",
+  title: "Commercial Projects in Gurgaon & Delhi NCR | Mapsko",
   description:
-    "Discover Mapsko’s commercial developments offering modern infrastructure, strategic locations, and premium business-ready spaces in Gurugram.",
+    "Explore commercial projects by Mapsko Group in Gurgaon and across NCR, offering office and retail spaces in well-connected locations.",
   alternates: {
     canonical: absoluteUrl("/projects/commercial-projects"),
   },

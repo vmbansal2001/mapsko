@@ -25,7 +25,7 @@ const ImageGalleryContent = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {property.imageGallery?.map((imageItem) => (
-          <div key={imageItem._key}>
+          <div key={imageItem._key} className="relative">
             {imageItem.image && (
               <SanityImage
                 image={imageItem.image}
@@ -35,7 +35,7 @@ const ImageGalleryContent = () => {
               />
             )}
             {imageItem.label && (
-              <p className="p-4 bg-lime-500 text-center text-white text-2xl font-bold">
+              <p className="p-4 absolute bottom-0 left-0 right-0 text-center text-white text-2xl font-bold z-[1]">
                 {imageItem.label}
               </p>
             )}

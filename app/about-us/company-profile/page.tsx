@@ -6,9 +6,9 @@ import HeroSection from "@/views/about-us/company-profile/hero-section/hero-sect
 import SecondSection from "@/views/about-us/company-profile/second-section/second-section";
 
 export const metadata = {
-  title: "Company Profile | Mapsko Group",
+  title: "Mapsko Group - Real Estate Company Profile & Legacy",
   description:
-    "Learn about Mapsko Group’s legacy of crafting premium residential and commercial developments, our leadership, and commitment to quality in Gurugram.",
+    "Mapsko Group delivers premium residential & commercial projects in Gurgaon & Delhi-NCR with quality, innovation & trusted expertise.",
   alternates: {
     canonical: absoluteUrl("/about-us/company-profile"),
   },

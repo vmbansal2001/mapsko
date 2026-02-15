@@ -35,15 +35,15 @@ const socialLinks = [
 
 const Footer = async () => {
   const projects = await client.fetch<ProjectFooterItem[]>(
-    projectsForFooterQuery
+    projectsForFooterQuery,
   );
 
   const residentialProjects = projects.filter(
-    (p) => p.projectType === "residential"
+    (p) => p.projectType === "residential",
   );
 
   const commercialProjects = projects.filter(
-    (p) => p.projectType === "commercial"
+    (p) => p.projectType === "commercial",
   );
 
   return (
@@ -55,7 +55,7 @@ const Footer = async () => {
         alt="Footer background"
       >
         <div className="common-frame-box py-12 md:py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 lg:gap-12 items-start">
             <div className="flex flex-col gap-4 text-sm md:text-base">
               <Logo aria-label="Mapsko logo" className="md:w-[260px] w-32" />
               <p className="max-w-[340px] leading-relaxed">

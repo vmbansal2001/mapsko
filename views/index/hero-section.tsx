@@ -31,22 +31,22 @@ const HeroSection = () => {
         <div className="w-screen h-screen flex items-center justify-between flex-col text-white px-4 sm:px-6">
           <Navbar />
           <div className="text-center px-4 sm:px-6 mx-auto">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
+            <h1 className="text-2xl lg:text-5xl leading-tight">
               BUILDING DREAMS, CREATING LEGACIES
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl">
+            <p className="text-base lg:text-2xl">
               Premium Real Estate Excellence
             </p>
 
             <Link
               href="/projects/project-updates"
-              className="flex w-fit mx-auto border border-white hover:bg-white hover:text-black cursor-pointer transition-all duration-300 py-3 px-6 sm:py-4 sm:px-8 mt-6 sm:mt-10 text-sm sm:text-base"
+              className="flex w-fit mx-auto border border-white hover:bg-white hover:text-black cursor-pointer transition-all duration-300 py-3 px-6 lg:py-4 lg:px-8 mt-6 lg:mt-10 text-sm lg:text-base"
             >
               Explore Our Projects
             </Link>
           </div>
-          <div className="w-full mx-auto px-4 sm:px-6 mb-8 sm:mb-12 md:mb-20">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 sm:divide-x sm:divide-white sm:*:px-4 text-base sm:text-lg xl:text-2xl">
+          <div className="w-full mx-auto px-4 sm:px-6 mb-2 md:mb-4 lg:mb-20">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 sm:divide-x sm:divide-white sm:*:px-4 text-base lg:text-2xl">
               <p className="text-center sm:text-left">
                 <span className="font-bold">22+</span> Delivered Projects
               </p>

@@ -11,7 +11,7 @@ const Navbar = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const closeDropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(
-    null
+    null,
   );
 
   const links = [
@@ -126,7 +126,7 @@ const Navbar = () => {
           <Logo className="w-24 sm:w-32 lg:w-48 xl:w-[200px]" />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-2 md:gap-3 lg:gap-5 xl:gap-8 flex-wrap lg:flex-nowrap">
+        <nav className="hidden xl:flex items-center gap-2 md:gap-3 lg:gap-5 xl:gap-8 flex-wrap lg:flex-nowrap">
           {links.map((link, index) => {
             const hasSubRoutes = link.subRoutes && link.subRoutes.length > 0;
 
@@ -184,7 +184,7 @@ const Navbar = () => {
           })}
         </nav>
 
-        <div className="hidden md:block shrink-0">
+        <div className="hidden xl:block shrink-0">
           <Link
             href="/contact"
             className="border uppercase border-[#8AC028] hover:bg-[#8AC028] leading-none hover:text-black cursor-pointer transition-all duration-300 py-2 px-4 md:px-5 lg:px-6 xl:px-8 text-[#8AC028] font-bold text-xs md:text-xs lg:text-sm xl:text-base whitespace-nowrap"
@@ -193,7 +193,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3 md:hidden">
+        <div className="flex items-center gap-2 sm:gap-3 xl:hidden">
           <button
             ref={toggleRef}
             onClick={toggleMenu}
@@ -224,7 +224,7 @@ const Navbar = () => {
 
       {isMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[1px] md:hidden"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[1px] xl:hidden"
           onClick={() => setIsMenuOpen(false)}
         >
           <div

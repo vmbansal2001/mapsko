@@ -7,9 +7,9 @@ import SecondSection from "@/views/about-us/corporate-philosophy/second-section"
 import ThirdSection from "@/views/about-us/corporate-philosophy/third-section";
 
 export const metadata = {
-  title: "Corporate Philosophy | Mapsko Group",
+  title: "Mapsko Group - Corporate Philosophy & Core Values",
   description:
-    "Discover the values and philosophy that guide Mapsko Group—quality, transparency, and customer-first development across Gurugram’s landmark projects.",
+    "Discover Mapsko Group's philosophy, our vision, mission and values that guide growth, innovation, quality and sustainable real estate excellence.",
   alternates: {
     canonical: absoluteUrl("/about-us/corporate-philosophy"),
   },
